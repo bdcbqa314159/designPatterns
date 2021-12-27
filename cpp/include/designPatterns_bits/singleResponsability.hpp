@@ -6,8 +6,52 @@
 
 using namespace std;
 
+// struct Journal
+// {
+//     string title;
+//     vector<string> entries;
+
+//     explicit Journal(const string &title) : title{title}
+//     {
+//     }
+
+//     void add(const string &entry);
+
+//     void save(const string &filename);
+// };
+
+// void Journal::add(const string &entry)
+// {
+//     static int count = 1;
+//     entries.push_back(boost::lexical_cast<string>(count++) + " : " + entry);
+// }
+
+// void Journal::save(const string &filename)
+// {
+
+//     ofstream ofs(filename);
+//     for (auto &s : entries)
+//     {
+//         ofs << s << endl;
+//     }
+// }
+
+// struct PersistenceManager
+// {
+
+//     void save(const Journal &j, const string &filename)
+//     {
+//         ofstream ofs(filename);
+//         for (auto &s : j.entries)
+//         {
+//             ofs << s << endl;
+//         }
+//     }
+// };
+
 struct Journal
 {
+
     string title;
     vector<string> entries;
 
@@ -16,20 +60,20 @@ struct Journal
     }
 
     void add(const string &entry);
-
     void save(const string &filename);
 };
 
 void Journal::add(const string &entry)
 {
+
     static int count = 1;
     entries.push_back(boost::lexical_cast<string>(count++) + " : " + entry);
 }
 
 void Journal::save(const string &filename)
 {
-
     ofstream ofs(filename);
+
     for (auto &s : entries)
     {
         ofs << s << endl;
@@ -39,10 +83,11 @@ void Journal::save(const string &filename)
 struct PersistenceManager
 {
 
-    void save(const Journal &j, const string &filename)
+    void save(const Journal &journal, const string &filename)
     {
         ofstream ofs(filename);
-        for (auto &s : j.entries)
+
+        for (auto &s : journal.entries)
         {
             ofs << s << endl;
         }
