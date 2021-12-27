@@ -1,0 +1,7 @@
+/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles/designPatterns.dir
+/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles/edit_cache.dir
+/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles/rebuild_cache.dir
+/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles/list_install_components.dir
+/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles/install.dir
+/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles/install/local.dir
+/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles/install/strip.dir

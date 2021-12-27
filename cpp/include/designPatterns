@@ -1,0 +1,7 @@
+#ifndef DESIGNPATTERNS_H
+#define DESIGNPATTERNS_H
+
+#include "designPatterns_bits/test.hpp"
+#include "designPatterns_bits/singleResponsability.hpp"
+
+#endif

@@ -1,0 +1,3 @@
+/Users/bernardocohen/repos/designPatterns/cpp/tests/build/CMakeFiles/test.dir
+/Users/bernardocohen/repos/designPatterns/cpp/tests/build/CMakeFiles/edit_cache.dir
+/Users/bernardocohen/repos/designPatterns/cpp/tests/build/CMakeFiles/rebuild_cache.dir
