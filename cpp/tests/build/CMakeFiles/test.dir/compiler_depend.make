@@ -656,7 +656,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/boost/core/cmath.hpp \
   /usr/local/include/boost/integer.hpp \
   /usr/local/include/boost/integer_fwd.hpp \
-  /usr/local/include/boost/detail/basic_pointerbuf.hpp
+  /usr/local/include/boost/detail/basic_pointerbuf.hpp \
+  /usr/local/include/designPatterns_bits/openClose.hpp
 
 
 /usr/local/include/boost/detail/basic_pointerbuf.hpp:
@@ -852,6 +853,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /usr/local/include/boost/mpl/next_prior.hpp:
 
 /usr/local/include/boost/mpl/next.hpp:
+
+/usr/local/include/designPatterns_bits/openClose.hpp:
 
 /usr/local/include/boost/mpl/equal_to.hpp:
 

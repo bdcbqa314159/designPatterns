@@ -3,5 +3,6 @@
 
 #include "designPatterns_bits/test.hpp"
 #include "designPatterns_bits/singleResponsability.hpp"
+#include "designPatterns_bits/openClose.hpp"
 
 #endif
