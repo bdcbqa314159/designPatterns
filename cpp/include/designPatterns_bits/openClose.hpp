@@ -6,10 +6,9 @@ using namespace std;
 enum class Color
 {
     red,
-    green,
-    blue
+    blue,
+    green
 };
-
 enum class Size
 {
     small,
@@ -19,7 +18,6 @@ enum class Size
 
 struct Product
 {
-
     string name;
     Color color;
     Size size;
@@ -27,19 +25,21 @@ struct Product
 
 struct ProductFilter
 {
+
     typedef vector<Product *> Items;
 
     Items by_color(const Items &items, const Color &color)
     {
         Items result;
 
-        for (auto &i : items)
+        for (auto &p : items)
         {
-            if (i->color == color)
+            if (p->color == color)
             {
-                result.push_back(i);
+                result.push_back(p);
             }
         }
+
         return result;
     }
 
@@ -47,13 +47,14 @@ struct ProductFilter
     {
         Items result;
 
-        for (auto &i : items)
+        for (auto &p : items)
         {
-            if (i->size == size)
+            if (p->size == size)
             {
-                result.push_back(i);
+                result.push_back(p);
             }
         }
+
         return result;
     }
 
@@ -61,47 +62,37 @@ struct ProductFilter
     {
         Items result;
 
-        for (auto &i : items)
+        for (auto &p : items)
         {
-            if (i->color == color && i->size == size)
+            if (p->size == size && p->color == color)
             {
-                result.push_back(i);
+                result.push_back(p);
             }
         }
+
         return result;
     }
 };
 
 template <typename T>
-struct AndSpecification;
-
-template <typename T>
 struct Specification
 {
+
     virtual ~Specification() = default;
     virtual bool is_satisfied(T *item) const = 0;
-
-    // This breaks the OCP if you add it post-hoc
-    /*AndSpecification<T> operator&&(Specification<T>&& other){
-        return AndSpecification<T>(*this, other);
-    }*/
 };
-
-template <typename T>
-AndSpecification<T> operator&&(const Specification<T> &first, const Specification<T> &second)
-{
-    return {first, second};
-}
 
 template <typename T>
 struct Filter
 {
+
     virtual ~Filter() = default;
     virtual vector<T *> filter(vector<T *> items, Specification<T> &spec) = 0;
 };
 
 struct BetterFilter : Filter<Product>
 {
+
     vector<Product *> filter(vector<Product *> items, Specification<Product> &spec) override
     {
         vector<Product *> result;
@@ -121,13 +112,14 @@ struct ColorSpecification : Specification<Product>
 {
 
     Color color;
-    ColorSpecification(Color color) : color(color)
+
+    ColorSpecification(const Color color) : color(color)
     {
     }
 
     bool is_satisfied(Product *item) const override
     {
-        return (item->color == color);
+        return item->color == color;
     }
 };
 
@@ -135,13 +127,14 @@ struct SizeSpecification : Specification<Product>
 {
 
     Size size;
-    SizeSpecification(Size size) : size(size)
+
+    SizeSpecification(const Size size) : size(size)
     {
     }
 
     bool is_satisfied(Product *item) const override
     {
-        return (item->size == size);
+        return item->size == size;
     }
 };
 
@@ -160,6 +153,13 @@ struct AndSpecification : Specification<T>
         return first.is_satisfied(item) && second.is_satisfied(item);
     }
 };
+
+template <typename T>
+AndSpecification<T> operator&&(const Specification<T> &first, const Specification<T> &second)
+{
+
+    return {first, second};
+}
 
 /* We create a filter for this class -> the single responsability principle is respected. */
 
