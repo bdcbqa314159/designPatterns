@@ -9,6 +9,7 @@ enum class Color
     green,
     blue
 };
+
 enum class Size
 {
     small,
@@ -31,12 +32,8 @@ struct ProductFilter
     {
         Items result;
         for (auto &i : items)
-        {
             if (i->color == color)
-            {
                 result.push_back(i);
-            }
-        }
         return result;
     }
 
@@ -44,12 +41,8 @@ struct ProductFilter
     {
         Items result;
         for (auto &i : items)
-        {
             if (i->size == size)
-            {
                 result.push_back(i);
-            }
-        }
         return result;
     }
 
@@ -57,12 +50,8 @@ struct ProductFilter
     {
         Items result;
         for (auto &i : items)
-        {
-            if (i->size == size && i->color == color)
-            {
+            if (i->color == color && i->size == size)
                 result.push_back(i);
-            }
-        }
         return result;
     }
 };
@@ -76,9 +65,8 @@ struct Specification
     virtual ~Specification() = default;
     virtual bool is_satisfied(T *item) const = 0;
 
-    // If we add it post-hoc we break OCP
-    /*AndSpecification<T> operator&&(Specification<T> &&other)
-    {
+    // This breaks the OCP if you add it post-hoc
+    /*AndSpecification<T> operator&&(Specification<T>&& other){
         return AndSpecification<T>(*this, other);
     }*/
 };
@@ -86,6 +74,7 @@ struct Specification
 template <typename T>
 AndSpecification<T> operator&&(const Specification<T> &first, const Specification<T> &second)
 {
+
     return {first, second};
 }
 
@@ -100,42 +89,39 @@ struct BetterFilter : Filter<Product>
     vector<Product *> filter(vector<Product *> items, Specification<Product> &spec) override
     {
         vector<Product *> result;
-
         for (auto &p : items)
-        {
             if (spec.is_satisfied(p))
-            {
                 result.push_back(p);
-            }
-        }
         return result;
     }
 };
 
 struct ColorSpecification : Specification<Product>
 {
+
     Color color;
+
     ColorSpecification(Color color) : color{color}
     {
     }
 
-    bool is_satisfied(Product *item) const
+    bool is_satisfied(Product *items) const override
     {
-        return item->color == color;
+        return items->color == color;
     }
 };
 
 struct SizeSpecification : Specification<Product>
 {
-
     Size size;
+
     SizeSpecification(Size size) : size{size}
     {
     }
 
-    bool is_satisfied(Product *item) const
+    bool is_satisfied(Product *items) const override
     {
-        return item->size == size;
+        return items->size == size;
     }
 };
 
@@ -145,7 +131,7 @@ struct AndSpecification : Specification<T>
     const Specification<T> &first;
     const Specification<T> &second;
 
-    AndSpecification(const Specification<T> &first, const Specification<T> &second) : first{first}, second{second}
+    AndSpecification(const Specification<T> &first, const Specification<T> &second) : first(first), second(second)
     {
     }
 
