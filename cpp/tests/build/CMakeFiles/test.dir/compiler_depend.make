@@ -657,7 +657,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/boost/integer.hpp \
   /usr/local/include/boost/integer_fwd.hpp \
   /usr/local/include/boost/detail/basic_pointerbuf.hpp \
-  /usr/local/include/designPatterns_bits/openClose.hpp
+  /usr/local/include/designPatterns_bits/openClose.hpp \
+  /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp
 
 
 /usr/local/include/boost/detail/basic_pointerbuf.hpp:
@@ -1893,6 +1894,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/wchar.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/stdint.h:
+
+/usr/local/include/designPatterns_bits/lyskovSubstitution.hpp:
 
 /usr/local/include/boost/numeric/conversion/detail/int_float_mixture.hpp:
 

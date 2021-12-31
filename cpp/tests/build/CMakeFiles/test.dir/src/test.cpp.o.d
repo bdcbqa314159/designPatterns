@@ -654,4 +654,5 @@ CMakeFiles/test.dir/src/test.cpp.o: \
   /usr/local/include/boost/integer.hpp \
   /usr/local/include/boost/integer_fwd.hpp \
   /usr/local/include/boost/detail/basic_pointerbuf.hpp \
-  /usr/local/include/designPatterns_bits/openClose.hpp
+  /usr/local/include/designPatterns_bits/openClose.hpp \
+  /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp

@@ -82,12 +82,23 @@ void openCloseTester()
     }
 }
 
+void lyskovTester()
+{
+
+    Rectangle r(5, 5);
+    process(r);
+
+    Square sq(5);
+    process(sq);
+}
+
 int main()
 {
 
     messageCool();
-    singleResponsabilityTester();
-    openCloseTester();
+    // singleResponsabilityTester();
+    // openCloseTester();
+    lyskovTester();
 
     return 0;
 }

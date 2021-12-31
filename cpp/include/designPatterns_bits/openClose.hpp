@@ -1,3 +1,6 @@
+#ifndef OCP_H
+#define OCP_H
+
 #include <string>
 #include <vector>
 
@@ -173,3 +176,5 @@ AndSpecification<T> operator&&(const Specification<T> &first, const Specificatio
 /*Starting to be problematic because we are coming back into an already done solution and we are mofifying it which is not ideal.*/
 
 /* The color specification do the same work but the technique used is way more flexible and extensible for other products. */
+
+#endif

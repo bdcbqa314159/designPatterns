@@ -22,6 +22,7 @@ set(SOURCE_FILES
     ${PROJECT_INCLUDE_DIR}/test.hpp
     ${PROJECT_INCLUDE_DIR}/singleResponsability.hpp
     ${PROJECT_INCLUDE_DIR}/openClose.hpp
+    ${PROJECT_INCLUDE_DIR}/lyskovSubstitution.hpp
   
     ${PROJECT_SOURCE_DIR}/test.cpp
     
