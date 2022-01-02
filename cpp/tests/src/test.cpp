@@ -97,7 +97,7 @@ int main()
 
     messageCool();
     // singleResponsabilityTester();
-    // openCloseTester();
+    openCloseTester();
     lyskovTester();
 
     return 0;

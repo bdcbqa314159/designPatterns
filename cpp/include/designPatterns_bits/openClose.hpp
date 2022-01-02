@@ -42,6 +42,7 @@ struct ProductFilter
                 result.push_back(item);
             }
         }
+
         return result;
     }
 
@@ -56,6 +57,7 @@ struct ProductFilter
                 result.push_back(item);
             }
         }
+
         return result;
     }
 
@@ -65,11 +67,12 @@ struct ProductFilter
 
         for (auto &item : items)
         {
-            if (item->size == size && item->size == size)
+            if (item->size == size && item->color == color)
             {
                 result.push_back(item);
             }
         }
+
         return result;
     }
 };
@@ -81,12 +84,10 @@ struct Specification
     virtual ~Specification() = default;
     virtual bool is_satisfied(T *item) const = 0;
 
-    // this breaks OCP if added post-hoc
-    /*
-    AndSpecification<T> operator&&(Specification<T> &&other)
-    {
-        return AndSpecification(*this, other);
-    }*/
+    // This breaks OCP if added post-hoc:
+    // AndSpecification<T> operator&&(Specification<T>&&other){
+    //     return AndSpecification(*this, other);
+    // }
 };
 
 template <typename T>
@@ -99,8 +100,7 @@ struct Filter
 
 struct BetterFilter : Filter<Product>
 {
-
-    virtual vector<Product *> filter(vector<Product *> items, Specification<Product> &spec)
+    vector<Product *> filter(vector<Product *> items, Specification<Product> &spec) override
     {
         vector<Product *> result;
 
@@ -111,6 +111,7 @@ struct BetterFilter : Filter<Product>
                 result.push_back(item);
             }
         }
+
         return result;
     }
 };
@@ -148,6 +149,7 @@ struct SizeSpecification : Specification<Product>
 template <typename T>
 struct AndSpecification : Specification<T>
 {
+
     const Specification<T> &first;
     const Specification<T> &second;
 
@@ -157,6 +159,7 @@ struct AndSpecification : Specification<T>
 
     bool is_satisfied(T *item) const
     {
+
         return (first.is_satisfied(item) && second.is_satisfied(item));
     }
 };
@@ -164,7 +167,6 @@ struct AndSpecification : Specification<T>
 template <typename T>
 AndSpecification<T> operator&&(const Specification<T> &first, const Specification<T> &second)
 {
-
     return {first, second};
 }
 

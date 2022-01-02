@@ -5,8 +5,10 @@
 
 class Rectangle
 {
+
 protected:
-    int width, height;
+    int height;
+    int width;
 
 public:
     Rectangle(int width, int height) : width(width), height(height)
@@ -41,21 +43,20 @@ public:
 
 class Square : public Rectangle
 {
+
 public:
     Square(int size) : Rectangle(size, size)
     {
     }
 
-    void set_width(const int width) override
+    void set_width(const int width)
     {
-        this->width = width;
-        this->height = width;
+        this->height = this->width = width;
     }
 
-    void set_height(const int height) override
+    void set_height(const int height)
     {
-        this->height = height;
-        this->width = height;
+        this->height = this->width = height;
     }
 };
 
@@ -64,9 +65,8 @@ void process(Rectangle &r)
     int w = r.get_width();
     r.set_height(10);
 
-    std::cout << "expected area = " << w * 10 << std::endl;
-
-    std::cout << " actual area = " << r.area() << std::endl;
+    std::cout << "expected area " << w * 10 << std::endl;
+    std::cout << "actual area " << r.area() << std::endl;
 }
 
 // Objects in a program should be replaceable with instances of their subtypes without altering the correctness of the program.
