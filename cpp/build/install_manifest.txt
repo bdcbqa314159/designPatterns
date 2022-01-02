@@ -4,4 +4,5 @@
 /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp
 /usr/local/include/designPatterns_bits/openClose.hpp
 /usr/local/include/designPatterns_bits/test.hpp
+/usr/local/include/designPatterns_bits/interfaceAggregation.hpp
 /usr/local/include/designPatterns_bits/singleResponsability.hpp

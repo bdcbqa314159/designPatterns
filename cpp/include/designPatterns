@@ -5,5 +5,6 @@
 #include "designPatterns_bits/singleResponsability.hpp"
 #include "designPatterns_bits/openClose.hpp"
 #include "designPatterns_bits/lyskovSubstitution.hpp"
+#include "designPatterns_bits/interfaceAggregation.hpp"
 
 #endif

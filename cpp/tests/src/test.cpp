@@ -92,13 +92,33 @@ void lyskovTester()
     process(sq);
 }
 
+void interfaceAggregationTester()
+{
+
+    Document doc;
+
+    SingleScanner scan;
+    scan.scan(doc);
+    scan.print(doc);
+
+    Printer p;
+    Scanner sc;
+
+    Machine machine(p, sc);
+
+    machine.print(doc);
+    machine.scan(doc);
+}
+
 int main()
 {
 
     messageCool();
     // singleResponsabilityTester();
-    openCloseTester();
-    lyskovTester();
+    // openCloseTester();
+    // lyskovTester();
+
+    interfaceAggregationTester();
 
     return 0;
 }

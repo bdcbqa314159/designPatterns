@@ -658,7 +658,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/boost/integer_fwd.hpp \
   /usr/local/include/boost/detail/basic_pointerbuf.hpp \
   /usr/local/include/designPatterns_bits/openClose.hpp \
-  /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp
+  /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp \
+  /usr/local/include/designPatterns_bits/interfaceAggregation.hpp
 
 
 /usr/local/include/boost/detail/basic_pointerbuf.hpp:
@@ -686,6 +687,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /usr/local/include/boost/swap.hpp:
 
 /usr/local/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp:
+
+/usr/local/include/designPatterns_bits/interfaceAggregation.hpp:
 
 /usr/local/include/boost/numeric/conversion/detail/bounds.hpp:
 
