@@ -116,8 +116,8 @@ int main()
     // messageCool();
     // singleResponsabilityTester();
     // openCloseTester();
-    lyskovTester();
-    // interfaceAggregationTester();
+    // lyskovTester();
+    interfaceAggregationTester();
 
     return 0;
 }

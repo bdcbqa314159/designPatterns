@@ -9,6 +9,7 @@ using namespace std;
 
 struct Document
 {
+
     string title;
     vector<string> lines;
 };
@@ -17,44 +18,46 @@ struct IMachineBad
 {
 
     virtual void print(Document &doc) = 0;
-    virtual void fax(Document &doc) = 0;
     virtual void scan(Document &doc) = 0;
+    virtual void fax(Document &doc) = 0;
 };
 
 struct MFP : IMachineBad
 {
 
-    void print(Document &doc) override
+    void print(Document &doc)
     {
-        cout << "printing doc" << endl;
-    };
+        std::cout << "printing with bad interface :(" << std::endl;
+    }
 
-    void fax(Document &doc) override
+    void fax(Document &doc)
     {
-        cout << "faxing doc" << endl;
-    };
-    void scan(Document &doc) override
+        std::cout << "faxing with bad interface :(" << std::endl;
+    }
+
+    void scan(Document &doc)
     {
-        cout << "faxing doc" << endl;
-    };
+        std::cout << "scanning with bad interface :(" << std::endl;
+    }
 };
 
 struct SingleScanner : IMachineBad
 {
 
-    void print(Document &doc) override
+    void print(Document &doc)
     {
-        cout << "nothing" << endl;
-    };
+        std::cout << "No printing because only scanning." << std::endl;
+    }
 
-    void fax(Document &doc) override
+    void fax(Document &doc)
     {
-        cout << "nothing" << endl;
-    };
-    void scan(Document &doc) override
+        std::cout << "No faxing because only scanning." << std::endl;
+    }
+
+    void scan(Document &doc)
     {
-        cout << "faxing doc" << endl;
-    };
+        std::cout << "scanning with bad interface & only scanner :(" << std::endl;
+    }
 };
 
 struct IPrinter
@@ -78,18 +81,18 @@ struct IFaxer
 struct Printer : IPrinter
 {
 
-    void print(Document &doc) override
+    void print(Document &doc)
     {
-        cout << "printing" << endl;
+        std::cout << "Printing with a nicer interface" << std::endl;
     }
 };
 
 struct Scanner : IScanner
 {
 
-    void scan(Document &doc) override
+    void scan(Document &doc)
     {
-        cout << "scanning" << endl;
+        std::cout << "Scanning with a nicer interface" << std::endl;
     }
 };
 
@@ -107,12 +110,12 @@ struct Machine : IMachine
     {
     }
 
-    void print(Document &doc) override
+    void print(Document &doc)
     {
         printer.print(doc);
     }
 
-    void scan(Document &doc) override
+    void scan(Document &doc)
     {
         scanner.scan(doc);
     }
