@@ -7,11 +7,11 @@ class Rectangle
 {
 
 protected:
-    int height;
     int width;
+    int height;
 
 public:
-    Rectangle(int width, int height) : width(width), height(height)
+    Rectangle(int width, int height) : height(height), width(width)
     {
     }
 
@@ -62,11 +62,13 @@ public:
 
 void process(Rectangle &r)
 {
+
     int w = r.get_width();
+
     r.set_height(10);
 
-    std::cout << "expected area " << w * 10 << std::endl;
-    std::cout << "actual area " << r.area() << std::endl;
+    std::cout << "Expected area : " << w * 10 << std::endl;
+    std::cout << "Actual area : " << r.area() << std::endl;
 }
 
 // Objects in a program should be replaceable with instances of their subtypes without altering the correctness of the program.

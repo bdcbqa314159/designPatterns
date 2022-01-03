@@ -113,12 +113,11 @@ void interfaceAggregationTester()
 int main()
 {
 
-    messageCool();
+    // messageCool();
     // singleResponsabilityTester();
     // openCloseTester();
-    // lyskovTester();
-
-    interfaceAggregationTester();
+    lyskovTester();
+    // interfaceAggregationTester();
 
     return 0;
 }
