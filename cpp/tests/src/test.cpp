@@ -110,6 +110,21 @@ void interfaceAggregationTester()
     machine.scan(doc);
 }
 
+void dependencyInversionTester()
+{
+    Person parent("John");
+    Person child1("Chris");
+    Person child2("Matt");
+
+    RelationShips relationships;
+
+    relationships.add_parent_and_child(parent, child1);
+
+    relationships.add_parent_and_child(parent, child2);
+
+    Research _(relationships);
+}
+
 int main()
 {
 
@@ -117,7 +132,8 @@ int main()
     // singleResponsabilityTester();
     // openCloseTester();
     // lyskovTester();
-    interfaceAggregationTester();
+    // interfaceAggregationTester();
+    dependencyInversionTester();
 
     return 0;
 }

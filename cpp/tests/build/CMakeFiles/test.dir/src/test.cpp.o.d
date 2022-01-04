@@ -656,4 +656,5 @@ CMakeFiles/test.dir/src/test.cpp.o: \
   /usr/local/include/boost/detail/basic_pointerbuf.hpp \
   /usr/local/include/designPatterns_bits/openClose.hpp \
   /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp \
-  /usr/local/include/designPatterns_bits/interfaceAggregation.hpp
+  /usr/local/include/designPatterns_bits/interfaceAggregation.hpp \
+  /usr/local/include/designPatterns_bits/dependencyInversion.hpp

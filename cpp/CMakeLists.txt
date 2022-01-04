@@ -24,6 +24,7 @@ set(SOURCE_FILES
     ${PROJECT_INCLUDE_DIR}/openClose.hpp
     ${PROJECT_INCLUDE_DIR}/lyskovSubstitution.hpp
     ${PROJECT_INCLUDE_DIR}/interfaceAggregation.hpp
+    ${PROJECT_INCLUDE_DIR}/dependencyInversion.hpp
   
     ${PROJECT_SOURCE_DIR}/test.cpp
     
