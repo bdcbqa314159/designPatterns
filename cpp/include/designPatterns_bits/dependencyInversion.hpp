@@ -12,14 +12,17 @@ enum class Relationship
 {
     parent,
     child,
-    sibbling,
+    siblling,
 };
 
 struct Person
 {
+
     string name;
 
-    Person(string name) : name(name) {}
+    Person(string name) : name(name)
+    {
+    }
 };
 
 struct RelationshipBrowser
@@ -56,19 +59,6 @@ struct Relationships : RelationshipBrowser
 
 struct Research
 {
-
-    // Research(const Relationships &relationships)
-    // {
-    //     auto &relations = relationships.relations;
-
-    //     for (auto &&[first, rel, second] : relations)
-    //     {
-    //         if (first.name == "John" && rel == Relationship::parent)
-    //         {
-    //             cout << "John has a child called " << second.name << endl;
-    //         }
-    //     }
-    // }
 
     Research(RelationshipBrowser &browser)
     {
