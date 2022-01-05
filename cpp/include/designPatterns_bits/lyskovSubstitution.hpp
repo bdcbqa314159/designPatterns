@@ -67,6 +67,7 @@ void process(Rectangle &r)
     std::cout << "Expected area " << 10 * w << std::endl;
     std::cout << "Actual area " << r.area() << std::endl;
 }
+
 // Objects in a program should be replaceable with instances of their subtypes without altering the correctness of the program.
 // The design above does not take care if Rectangle has subclasses like Square, the design is broken and Lyskov principle is violated.
 // If we want this process API keep going we need to set Square out of inheritance because process is not suitable for square anyway.
