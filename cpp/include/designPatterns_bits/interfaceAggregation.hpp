@@ -9,7 +9,6 @@ using namespace std;
 
 struct Document
 {
-
     string title;
     vector<string> lines;
 };
@@ -65,32 +64,31 @@ struct IPrinter
     virtual void print(Document &doc) = 0;
 };
 
+struct IScanner
+{
+    virtual void scan(Document &doc) = 0;
+};
+
 struct IFaxer
 {
     virtual void fax(Document &doc) = 0;
 };
 
-struct IScanner
-{
-
-    virtual void scan(Document &doc) = 0;
-};
-
 struct Printer : IPrinter
 {
 
-    void print(Document &doc)
+    void print(Document &doc) override
     {
-        std::cout << "printing with a better interface :)" << std::endl;
+        std::cout << "printing with a better single interface :)" << std::endl;
     }
 };
 
 struct Scanner : IScanner
 {
 
-    void scan(Document &doc)
+    void scan(Document &doc) override
     {
-        std::cout << "scanning with a better interface :)" << std::endl;
+        std::cout << "scanning with a better single interface" << std::endl;
     }
 };
 
@@ -100,6 +98,7 @@ struct IMachine : IPrinter, IScanner
 
 struct Machine : IMachine
 {
+
     IPrinter &printer;
     IScanner &scanner;
 
@@ -107,17 +106,16 @@ struct Machine : IMachine
     {
     }
 
-    void print(Document &doc)
+    void print(Document &doc) override
     {
         printer.print(doc);
     }
 
-    void scan(Document &doc)
+    void scan(Document &doc) override
     {
         scanner.scan(doc);
     }
 };
-
 #endif
 
 /*Interface Aggregation Principle is to avoid too big interfaces, mix the single responsability and then aggregate them according with the need we have.*/
