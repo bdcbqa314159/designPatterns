@@ -8,20 +8,18 @@
 
 using namespace std;
 
-enum class RelationShip
+enum class Relationship
 {
-
     parent,
     child,
-    sibling
+    sibbling,
 };
 
 struct Person
 {
     string name;
-    Person(string name) : name(name)
-    {
-    }
+
+    Person(string name) : name(name) {}
 };
 
 struct RelationshipBrowser
@@ -30,23 +28,23 @@ struct RelationshipBrowser
     virtual vector<Person> find_all_children_of(const string &name) = 0;
 };
 
-struct RelationShips : RelationshipBrowser
+struct Relationships : RelationshipBrowser
 {
 
-    vector<tuple<Person, RelationShip, Person>> relations;
-
+    vector<tuple<Person, Relationship, Person>> relations;
     void add_parent_and_child(const Person &parent, const Person &child)
     {
-        relations.push_back({parent, RelationShip::parent, child});
-        relations.push_back({child, RelationShip::child, parent});
+        relations.push_back({parent, Relationship::parent, child});
+        relations.push_back({child, Relationship::child, parent});
     }
 
     vector<Person> find_all_children_of(const string &name) override
     {
         vector<Person> result;
+
         for (auto &&[first, rel, second] : relations)
         {
-            if (first.name == name && rel == RelationShip::parent)
+            if (first.name == name && rel == Relationship::parent)
             {
                 result.push_back(second);
             }
@@ -59,15 +57,13 @@ struct RelationShips : RelationshipBrowser
 struct Research
 {
 
-    // Research(const RelationShips &relationships)
+    // Research(const Relationships &relationships)
     // {
-
     //     auto &relations = relationships.relations;
 
     //     for (auto &&[first, rel, second] : relations)
     //     {
-
-    //         if (first.name == "John" && rel == RelationShip::parent)
+    //         if (first.name == "John" && rel == Relationship::parent)
     //         {
     //             cout << "John has a child called " << second.name << endl;
     //         }

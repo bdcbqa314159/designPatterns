@@ -116,7 +116,7 @@ void dependencyInversionTester()
     Person child1("Chris");
     Person child2("Matt");
 
-    RelationShips relationships;
+    Relationships relationships;
 
     relationships.add_parent_and_child(parent, child1);
 
