@@ -9,6 +9,7 @@ using namespace std;
 
 struct Document
 {
+
     string title;
     vector<string> lines;
 };
@@ -42,9 +43,10 @@ struct MFP : IMachineBad
 
 struct SingleScanner : IMachineBad
 {
+
     void print(Document &doc) override
     {
-        std::cout << "Nothing here which is very bad :(" << std::endl;
+        std::cout << "nothing here coz only scanner :(" << std::endl;
     }
 
     void scan(Document &doc) override
@@ -54,41 +56,41 @@ struct SingleScanner : IMachineBad
 
     void fax(Document &doc) override
     {
-        std::cout << "Nothing here which is very bad :(" << std::endl;
+        std::cout << "nothing here coz only scanner :(" << std::endl;
     }
 };
 
 struct IPrinter
 {
-
     virtual void print(Document &doc) = 0;
-};
-
-struct IScanner
-{
-    virtual void scan(Document &doc) = 0;
 };
 
 struct IFaxer
 {
-
     virtual void fax(Document &doc) = 0;
+};
+
+struct IScanner
+{
+
+    virtual void scan(Document &doc) = 0;
 };
 
 struct Printer : IPrinter
 {
 
-    void print(Document &doc) override
+    void print(Document &doc)
     {
-        std::cout << "Printing with a better interface :)" << std::endl;
+        std::cout << "printing with a better interface :)" << std::endl;
     }
 };
 
 struct Scanner : IScanner
 {
-    void scan(Document &doc) override
+
+    void scan(Document &doc)
     {
-        std::cout << "Scanning with a better interface" << std::endl;
+        std::cout << "scanning with a better interface :)" << std::endl;
     }
 };
 
@@ -98,7 +100,6 @@ struct IMachine : IPrinter, IScanner
 
 struct Machine : IMachine
 {
-
     IPrinter &printer;
     IScanner &scanner;
 
@@ -106,12 +107,12 @@ struct Machine : IMachine
     {
     }
 
-    void print(Document &doc) override
+    void print(Document &doc)
     {
         printer.print(doc);
     }
 
-    void scan(Document &doc) override
+    void scan(Document &doc)
     {
         scanner.scan(doc);
     }
