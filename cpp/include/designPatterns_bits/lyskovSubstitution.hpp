@@ -5,29 +5,13 @@
 
 class Rectangle
 {
-
 protected:
     int width;
     int height;
 
 public:
-    Rectangle(int width, int height) : height(height), width(width)
+    Rectangle(int width, int height) : width(width), height(height)
     {
-    }
-
-    int get_width() const
-    {
-        return width;
-    }
-
-    int get_height() const
-    {
-        return height;
-    }
-
-    virtual void set_width(const int width)
-    {
-        this->width = width;
     }
 
     virtual void set_height(const int height)
@@ -35,9 +19,23 @@ public:
         this->height = height;
     }
 
+    virtual void set_width(const int width)
+    {
+        this->width = width;
+    }
+
+    int get_height() const
+    {
+        return height;
+    }
+
+    int get_width() const
+    {
+        return width;
+    }
     int area() const
     {
-        return width * height;
+        return height * width;
     }
 };
 
@@ -49,14 +47,14 @@ public:
     {
     }
 
-    void set_width(const int width)
-    {
-        this->height = this->width = width;
-    }
-
-    void set_height(const int height)
+    void set_height(int height)
     {
         this->height = this->width = height;
+    }
+
+    void set_width(int width)
+    {
+        this->width = this->height = width;
     }
 };
 
@@ -64,7 +62,6 @@ void process(Rectangle &r)
 {
 
     int w = r.get_width();
-
     r.set_height(10);
 
     std::cout << "Expected area : " << w * 10 << std::endl;
