@@ -24,7 +24,13 @@ struct Person
     }
 };
 
-struct RelationShips
+struct RelationshipBrowser
+{
+
+    virtual vector<Person> find_all_children_of(const string &name) = 0;
+};
+
+struct RelationShips : RelationshipBrowser
 {
 
     vector<tuple<Person, RelationShip, Person>> relations;
@@ -34,23 +40,45 @@ struct RelationShips
         relations.push_back({parent, RelationShip::parent, child});
         relations.push_back({child, RelationShip::child, parent});
     }
+
+    vector<Person> find_all_children_of(const string &name) override
+    {
+        vector<Person> result;
+        for (auto &&[first, rel, second] : relations)
+        {
+            if (first.name == name && rel == RelationShip::parent)
+            {
+                result.push_back(second);
+            }
+        }
+
+        return result;
+    }
 };
 
 struct Research
 {
 
-    Research(const RelationShips &relationships)
+    // Research(const RelationShips &relationships)
+    // {
+
+    //     auto &relations = relationships.relations;
+
+    //     for (auto &&[first, rel, second] : relations)
+    //     {
+
+    //         if (first.name == "John" && rel == RelationShip::parent)
+    //         {
+    //             cout << "John has a child called " << second.name << endl;
+    //         }
+    //     }
+    // }
+
+    Research(RelationshipBrowser &browser)
     {
-
-        auto &relations = relationships.relations;
-
-        for (auto &&[first, rel, second] : relations)
+        for (auto &child : browser.find_all_children_of("John"))
         {
-
-            if (first.name == "John" && rel == RelationShip::parent)
-            {
-                cout << "John has a child called " << second.name << endl;
-            }
+            cout << "John has a child called " << child.name << endl;
         }
     }
 };

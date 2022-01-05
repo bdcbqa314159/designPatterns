@@ -132,8 +132,8 @@ int main()
     // singleResponsabilityTester();
     // openCloseTester();
     // lyskovTester();
-    interfaceAggregationTester();
-    // dependencyInversionTester();
+    // interfaceAggregationTester();
+    dependencyInversionTester();
 
     return 0;
 }
