@@ -12,22 +12,17 @@ enum class Relationship
 {
     parent,
     child,
-    siblling,
+    sibbling
 };
 
 struct Person
 {
-
     string name;
-
-    Person(string name) : name(name)
-    {
-    }
+    Person(string name) : name(name) {}
 };
 
 struct RelationshipBrowser
 {
-
     virtual vector<Person> find_all_children_of(const string &name) = 0;
 };
 
@@ -35,6 +30,7 @@ struct Relationships : RelationshipBrowser
 {
 
     vector<tuple<Person, Relationship, Person>> relations;
+
     void add_parent_and_child(const Person &parent, const Person &child)
     {
         relations.push_back({parent, Relationship::parent, child});
@@ -44,7 +40,6 @@ struct Relationships : RelationshipBrowser
     vector<Person> find_all_children_of(const string &name) override
     {
         vector<Person> result;
-
         for (auto &&[first, rel, second] : relations)
         {
             if (first.name == name && rel == Relationship::parent)
@@ -59,6 +54,19 @@ struct Relationships : RelationshipBrowser
 
 struct Research
 {
+
+    // Research(const Relationships &relationships)
+    // {
+    //     auto &relations = relationships.relations;
+
+    //     for (auto &&[first, rel, second] : relations)
+    //     {
+    //         if (first.name == "John" && rel == Relationship::parent)
+    //         {
+    //             cout << "John has a child called " << second.name << endl;
+    //         }
+    //     }
+    // }
 
     Research(RelationshipBrowser &browser)
     {
