@@ -10,7 +10,6 @@ using namespace std;
 
 enum class Relationship
 {
-
     parent,
     child,
     sibling
@@ -21,7 +20,9 @@ struct Person
 
     string name;
 
-    Person(string name) : name(name){};
+    Person(string name) : name(name)
+    {
+    }
 };
 
 struct RelationshipBrowser
@@ -37,7 +38,6 @@ struct Relationships : RelationshipBrowser
 
     void add_parent_and_child(const Person &parent, const Person &child)
     {
-
         relations.push_back({parent, Relationship::parent, child});
         relations.push_back({child, Relationship::child, parent});
     }
@@ -61,7 +61,7 @@ struct Relationships : RelationshipBrowser
 
 struct Research
 {
-
+    // Bad dependency because at some point the concrete class could change and break our API
     // Research(const Relationships &relationships)
     // {
 
@@ -71,11 +71,12 @@ struct Research
     //     {
     //         if (first.name == "John" && rel == Relationship::parent)
     //         {
-    //             cout << "John has a child called " << first.name << endl;
+    //             cout << "John has a child called " << second.name << endl;
     //         }
     //     }
     // }
 
+    // More flexible beacuse it depends of a virtual class & the polymorphism keep a basic call without any breaking.
     Research(RelationshipBrowser &browser)
     {
 
