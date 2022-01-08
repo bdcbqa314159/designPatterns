@@ -660,7 +660,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/designPatterns_bits/openClose.hpp \
   /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp \
   /usr/local/include/designPatterns_bits/interfaceAggregation.hpp \
-  /usr/local/include/designPatterns_bits/dependencyInversion.hpp
+  /usr/local/include/designPatterns_bits/dependencyInversion.hpp \
+  /usr/local/include/designPatterns_bits/builderPattern.hpp
 
 
 /usr/local/include/boost/detail/basic_pointerbuf.hpp:
@@ -1932,6 +1933,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/sys/_pthread/_pthread_types.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/sys/cdefs.h:
+
+/usr/local/include/designPatterns_bits/builderPattern.hpp:
 
 /usr/local/include/boost/preprocessor/punctuation/comma_if.hpp:
 

@@ -125,6 +125,17 @@ void dependencyInversionTester()
     Research _(relationships);
 }
 
+void builderPatternTester()
+{
+    badBuilder();
+    std::cout << std::endl;
+    std::cout << "Easier way to build a complex object" << std::endl;
+
+    HtmlBuilder builder{"ul"};
+    builder.add_child("li", "hello").add_child("li", "world");
+    std::cout << builder.str() << std::endl;
+}
+
 int main()
 {
 
@@ -133,7 +144,8 @@ int main()
     // openCloseTester();
     // lyskovTester();
     // interfaceAggregationTester();
-    dependencyInversionTester();
+    // dependencyInversionTester();
+    builderPatternTester();
 
     return 0;
 }
