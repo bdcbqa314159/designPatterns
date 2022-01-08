@@ -137,6 +137,15 @@ void builderPatternTester()
     std::cout << builder.str() << std::endl;
 }
 
+void groovyStyleTester()
+{
+
+    std::cout << "Builiding a HTML like doc..." << std::endl;
+
+    std::cout << html::P{
+                     html::IMG{"https::pokemon.com/pikachu.png"}}
+              << std::endl;
+}
 int main()
 {
 
@@ -147,6 +156,7 @@ int main()
     // interfaceAggregationTester();
     // dependencyInversionTester();
     builderPatternTester();
+    groovyStyleTester();
 
     return 0;
 }

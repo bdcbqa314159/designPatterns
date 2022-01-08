@@ -8,5 +8,6 @@
 #include "designPatterns_bits/interfaceAggregation.hpp"
 #include "designPatterns_bits/dependencyInversion.hpp"
 #include "designPatterns_bits/builderPattern.hpp"
+#include "designPatterns_bits/groovyStyle.hpp"
 
 #endif

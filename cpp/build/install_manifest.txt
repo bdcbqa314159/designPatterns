@@ -3,6 +3,7 @@
 /usr/local/include/designPatterns_bits/dependencyInversion.hpp
 /usr/local/include/designPatterns_bits/.DS_Store
 /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp
+/usr/local/include/designPatterns_bits/groovyStyle.hpp
 /usr/local/include/designPatterns_bits/openClose.hpp
 /usr/local/include/designPatterns_bits/test.hpp
 /usr/local/include/designPatterns_bits/interfaceAggregation.hpp

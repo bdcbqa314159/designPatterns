@@ -661,8 +661,11 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp \
   /usr/local/include/designPatterns_bits/interfaceAggregation.hpp \
   /usr/local/include/designPatterns_bits/dependencyInversion.hpp \
-  /usr/local/include/designPatterns_bits/builderPattern.hpp
+  /usr/local/include/designPatterns_bits/builderPattern.hpp \
+  /usr/local/include/designPatterns_bits/groovyStyle.hpp
 
+
+/usr/local/include/designPatterns_bits/groovyStyle.hpp:
 
 /usr/local/include/boost/detail/basic_pointerbuf.hpp:
 

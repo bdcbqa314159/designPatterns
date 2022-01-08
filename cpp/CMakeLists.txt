@@ -26,6 +26,7 @@ set(SOURCE_FILES
     ${PROJECT_INCLUDE_DIR}/interfaceAggregation.hpp
     ${PROJECT_INCLUDE_DIR}/dependencyInversion.hpp
     ${PROJECT_INCLUDE_DIR}/builderPattern.hpp
+    ${PROJECT_INCLUDE_DIR}/groovyStyle.hpp
   
     ${PROJECT_SOURCE_DIR}/test.cpp
     
