@@ -127,6 +127,7 @@ void dependencyInversionTester()
 
 void builderPatternTester()
 {
+    std::cout << "Bad way to build a complex object such as formatted text:" << std::endl;
     badBuilder();
     std::cout << std::endl;
     std::cout << "Easier way to build a complex object" << std::endl;

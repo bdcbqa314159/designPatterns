@@ -9,6 +9,29 @@
 
 using namespace std;
 
+void badBuilder()
+{
+
+    string text = "hello";
+    string out = "<p>" + text + "</p>";
+
+    cout << out << endl;
+
+    string words[]{"hello", "world"};
+
+    ostringstream oss;
+
+    oss << "<ul>";
+
+    for (auto &w : words)
+    {
+        oss << "<li>" << w << "</li>" << endl;
+    }
+    oss << "</ul>";
+
+    cout << oss.str() << endl;
+}
+
 struct HtmlBuilder;
 
 struct HtmlElement
@@ -28,11 +51,11 @@ struct HtmlElement
     {
     }
 
-    string str(int indent = 0) const
+    string str(int indent = 0)
     {
 
         ostringstream oss;
-        string i(indent_size * indent, ' ');
+        string i(indent * indent_size, ' ');
         oss << i << "<" << name << ">" << endl;
 
         if (text.size() > 0)
@@ -40,9 +63,10 @@ struct HtmlElement
             oss << string(indent_size * (indent + 1), ' ') << text << endl;
         }
 
-        for (auto &e : elements)
+        for (auto &w : elements)
         {
-            oss << e.str(indent + 1);
+
+            oss << w.str(indent + 1);
         }
 
         oss << i << "</" << name << ">" << endl;
@@ -59,6 +83,7 @@ struct HtmlBuilder
 {
 
     HtmlElement root;
+
     HtmlBuilder(string root_name)
     {
         root.name = root_name;
@@ -68,14 +93,19 @@ struct HtmlBuilder
     {
 
         HtmlElement e{name, text};
+
         root.elements.emplace_back(e);
+
         return *this;
     }
 
     HtmlBuilder *add_child2(string name, string text)
     {
+
         HtmlElement e{name, text};
+
         root.elements.emplace_back(e);
+
         return this;
     }
 
@@ -89,27 +119,6 @@ struct HtmlBuilder
         return root;
     }
 };
-
-void badBuilder()
-{
-
-    string text = "hello";
-    string output = "<p>";
-    output += text;
-    output += "</p>";
-
-    string words[] = {"hello", "world"};
-
-    ostringstream oss;
-    oss << "<ul>";
-    for (auto &w : words)
-    {
-        oss << "<li>" << w << "</li>";
-    }
-    oss << "</ul>";
-
-    cout << oss.str() << endl;
-}
 
 #endif
 
