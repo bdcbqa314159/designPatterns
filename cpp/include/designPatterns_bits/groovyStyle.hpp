@@ -12,6 +12,7 @@ namespace html
 
     struct Tag
     {
+
         string name, text;
         vector<Tag> children;
         vector<pair<string, string>> attributes;
@@ -25,7 +26,7 @@ namespace html
                 os << " " << att.first << "=\"" << att.second << "\"";
             }
 
-            if (tag.children.size() == 0 && tag.text.length() == 0)
+            if (tag.children.size() == 0 && tag.attributes.size())
             {
                 os << "/>" << endl;
             }
@@ -37,11 +38,11 @@ namespace html
                 {
                     os << tag.text << endl;
                 }
-                for (const auto &child : tag.children)
+
+                for (auto &child : tag.children)
                 {
                     os << child;
                 }
-
                 os << "</" << tag.name << ">" << endl;
             }
 
@@ -50,21 +51,13 @@ namespace html
 
     protected:
         Tag(const string &name, const string &text) : name(name), text(text) {}
-
-        Tag(const string &name, const vector<Tag> &children) : name(name), children(children)
-        {
-        }
+        Tag(const string &name, const vector<Tag> children) : name(name), children(children) {}
     };
 
     struct P : Tag
     {
-        explicit P(const string &text) : Tag("p", text)
-        {
-        }
-
-        P(initializer_list<Tag> children) : Tag("p", children)
-        {
-        }
+        explicit P(const string &text) : Tag("p", text) {}
+        P(initializer_list<Tag> children) : Tag("p", children) {}
     };
 
     struct IMG : Tag
