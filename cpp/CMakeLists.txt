@@ -27,8 +27,12 @@ set(SOURCE_FILES
     ${PROJECT_INCLUDE_DIR}/dependencyInversion.hpp
     ${PROJECT_INCLUDE_DIR}/builderPattern.hpp
     ${PROJECT_INCLUDE_DIR}/groovyStyle.hpp
+    ${PROJECT_INCLUDE_DIR}/person.hpp
+    ${PROJECT_INCLUDE_DIR}/personBuilder.hpp
   
     ${PROJECT_SOURCE_DIR}/test.cpp
+    ${PROJECT_SOURCE_DIR}/person.cpp
+    ${PROJECT_SOURCE_DIR}/personBuilder.cpp
     
 )
 

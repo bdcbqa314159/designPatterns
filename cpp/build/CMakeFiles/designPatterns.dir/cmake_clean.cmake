@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/designPatterns.dir/src/person.cpp.o"
+  "CMakeFiles/designPatterns.dir/src/person.cpp.o.d"
+  "CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o"
+  "CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o.d"
   "CMakeFiles/designPatterns.dir/src/test.cpp.o"
   "CMakeFiles/designPatterns.dir/src/test.cpp.o.d"
   "libdesignPatterns.dylib"

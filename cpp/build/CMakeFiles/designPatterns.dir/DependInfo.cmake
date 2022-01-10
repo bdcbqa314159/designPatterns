@@ -8,6 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/bernardocohen/repos/designPatterns/cpp/src/person.cpp" "CMakeFiles/designPatterns.dir/src/person.cpp.o" "gcc" "CMakeFiles/designPatterns.dir/src/person.cpp.o.d"
+  "/Users/bernardocohen/repos/designPatterns/cpp/src/personBuilder.cpp" "CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o" "gcc" "CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o.d"
   "/Users/bernardocohen/repos/designPatterns/cpp/src/test.cpp" "CMakeFiles/designPatterns.dir/src/test.cpp.o" "gcc" "CMakeFiles/designPatterns.dir/src/test.cpp.o.d"
   )
 

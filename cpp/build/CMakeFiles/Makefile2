@@ -81,12 +81,12 @@ clean: CMakeFiles/designPatterns.dir/clean
 CMakeFiles/designPatterns.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles --progress-num=1,2 "Built target designPatterns"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles --progress-num=1,2,3,4 "Built target designPatterns"
 .PHONY : CMakeFiles/designPatterns.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/designPatterns.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/designPatterns.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles 0
 .PHONY : CMakeFiles/designPatterns.dir/rule

@@ -174,6 +174,54 @@ designPatterns/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/build
 .PHONY : designPatterns/fast
 
+src/person.o: src/person.cpp.o
+.PHONY : src/person.o
+
+# target to build an object file
+src/person.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/src/person.cpp.o
+.PHONY : src/person.cpp.o
+
+src/person.i: src/person.cpp.i
+.PHONY : src/person.i
+
+# target to preprocess a source file
+src/person.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/src/person.cpp.i
+.PHONY : src/person.cpp.i
+
+src/person.s: src/person.cpp.s
+.PHONY : src/person.s
+
+# target to generate assembly for a file
+src/person.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/src/person.cpp.s
+.PHONY : src/person.cpp.s
+
+src/personBuilder.o: src/personBuilder.cpp.o
+.PHONY : src/personBuilder.o
+
+# target to build an object file
+src/personBuilder.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o
+.PHONY : src/personBuilder.cpp.o
+
+src/personBuilder.i: src/personBuilder.cpp.i
+.PHONY : src/personBuilder.i
+
+# target to preprocess a source file
+src/personBuilder.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/src/personBuilder.cpp.i
+.PHONY : src/personBuilder.cpp.i
+
+src/personBuilder.s: src/personBuilder.cpp.s
+.PHONY : src/personBuilder.s
+
+# target to generate assembly for a file
+src/personBuilder.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/designPatterns.dir/build.make CMakeFiles/designPatterns.dir/src/personBuilder.cpp.s
+.PHONY : src/personBuilder.cpp.s
+
 src/test.o: src/test.cpp.o
 .PHONY : src/test.o
 
@@ -211,6 +259,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... designPatterns"
+	@echo "... src/person.o"
+	@echo "... src/person.i"
+	@echo "... src/person.s"
+	@echo "... src/personBuilder.o"
+	@echo "... src/personBuilder.i"
+	@echo "... src/personBuilder.s"
 	@echo "... src/test.o"
 	@echo "... src/test.i"
 	@echo "... src/test.s"

@@ -83,17 +83,49 @@ CMakeFiles/designPatterns.dir/src/test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/designPatterns.dir/src/test.cpp.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardocohen/repos/designPatterns/cpp/src/test.cpp -o CMakeFiles/designPatterns.dir/src/test.cpp.s
 
+CMakeFiles/designPatterns.dir/src/person.cpp.o: CMakeFiles/designPatterns.dir/flags.make
+CMakeFiles/designPatterns.dir/src/person.cpp.o: ../src/person.cpp
+CMakeFiles/designPatterns.dir/src/person.cpp.o: CMakeFiles/designPatterns.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/designPatterns.dir/src/person.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/designPatterns.dir/src/person.cpp.o -MF CMakeFiles/designPatterns.dir/src/person.cpp.o.d -o CMakeFiles/designPatterns.dir/src/person.cpp.o -c /Users/bernardocohen/repos/designPatterns/cpp/src/person.cpp
+
+CMakeFiles/designPatterns.dir/src/person.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/designPatterns.dir/src/person.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardocohen/repos/designPatterns/cpp/src/person.cpp > CMakeFiles/designPatterns.dir/src/person.cpp.i
+
+CMakeFiles/designPatterns.dir/src/person.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/designPatterns.dir/src/person.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardocohen/repos/designPatterns/cpp/src/person.cpp -o CMakeFiles/designPatterns.dir/src/person.cpp.s
+
+CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o: CMakeFiles/designPatterns.dir/flags.make
+CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o: ../src/personBuilder.cpp
+CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o: CMakeFiles/designPatterns.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o -MF CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o.d -o CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o -c /Users/bernardocohen/repos/designPatterns/cpp/src/personBuilder.cpp
+
+CMakeFiles/designPatterns.dir/src/personBuilder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/designPatterns.dir/src/personBuilder.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/bernardocohen/repos/designPatterns/cpp/src/personBuilder.cpp > CMakeFiles/designPatterns.dir/src/personBuilder.cpp.i
+
+CMakeFiles/designPatterns.dir/src/personBuilder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/designPatterns.dir/src/personBuilder.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/bernardocohen/repos/designPatterns/cpp/src/personBuilder.cpp -o CMakeFiles/designPatterns.dir/src/personBuilder.cpp.s
+
 # Object files for target designPatterns
 designPatterns_OBJECTS = \
-"CMakeFiles/designPatterns.dir/src/test.cpp.o"
+"CMakeFiles/designPatterns.dir/src/test.cpp.o" \
+"CMakeFiles/designPatterns.dir/src/person.cpp.o" \
+"CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o"
 
 # External object files for target designPatterns
 designPatterns_EXTERNAL_OBJECTS =
 
 libdesignPatterns.dylib: CMakeFiles/designPatterns.dir/src/test.cpp.o
+libdesignPatterns.dylib: CMakeFiles/designPatterns.dir/src/person.cpp.o
+libdesignPatterns.dylib: CMakeFiles/designPatterns.dir/src/personBuilder.cpp.o
 libdesignPatterns.dylib: CMakeFiles/designPatterns.dir/build.make
 libdesignPatterns.dylib: CMakeFiles/designPatterns.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libdesignPatterns.dylib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/bernardocohen/repos/designPatterns/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX shared library libdesignPatterns.dylib"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/designPatterns.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

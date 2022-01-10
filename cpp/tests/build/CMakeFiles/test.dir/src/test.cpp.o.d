@@ -659,4 +659,6 @@ CMakeFiles/test.dir/src/test.cpp.o: \
   /usr/local/include/designPatterns_bits/interfaceAggregation.hpp \
   /usr/local/include/designPatterns_bits/dependencyInversion.hpp \
   /usr/local/include/designPatterns_bits/builderPattern.hpp \
-  /usr/local/include/designPatterns_bits/groovyStyle.hpp
+  /usr/local/include/designPatterns_bits/groovyStyle.hpp \
+  /usr/local/include/designPatterns_bits/person.hpp \
+  /usr/local/include/designPatterns_bits/personBuilder.hpp

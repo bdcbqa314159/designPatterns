@@ -146,6 +146,22 @@ void groovyStyleTester()
                      html::IMG{"https::pokemon.com/pikachu.png"}}
               << std::endl;
 }
+
+void facetsTester()
+{
+    builder::Person p = builder::Person::create()
+                            .lives()
+                            .at("123 London Road")
+                            .with_postcode("SW1 1GB")
+                            .in("London")
+                            .works()
+                            .at("PragmaSoft")
+                            .as_a("Consultant")
+                            .earning(10e6);
+
+    cout << p << endl;
+}
+
 int main()
 {
 
@@ -157,6 +173,7 @@ int main()
     // dependencyInversionTester();
     builderPatternTester();
     groovyStyleTester();
+    facetsTester();
 
     return 0;
 }

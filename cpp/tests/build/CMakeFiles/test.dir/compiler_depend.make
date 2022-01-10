@@ -662,8 +662,13 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/designPatterns_bits/interfaceAggregation.hpp \
   /usr/local/include/designPatterns_bits/dependencyInversion.hpp \
   /usr/local/include/designPatterns_bits/builderPattern.hpp \
-  /usr/local/include/designPatterns_bits/groovyStyle.hpp
+  /usr/local/include/designPatterns_bits/groovyStyle.hpp \
+  /usr/local/include/designPatterns_bits/facets.hpp \
+  /usr/local/include/designPatterns_bits/person.hpp \
+  /usr/local/include/designPatterns_bits/personBuilder.hpp
 
+
+/usr/local/include/designPatterns_bits/facets.hpp:
 
 /usr/local/include/designPatterns_bits/groovyStyle.hpp:
 
@@ -1138,6 +1143,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /usr/local/include/boost/preprocessor/list/detail/fold_left.hpp:
 
 /usr/local/include/boost/mpl/aux_/config/nttp.hpp:
+
+/usr/local/include/designPatterns_bits/personBuilder.hpp:
 
 /usr/local/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp:
 
@@ -1638,6 +1645,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/sys/_types/_id_t.h:
 
 /usr/local/include/boost/preprocessor/facilities/overload.hpp:
+
+/usr/local/include/designPatterns_bits/person.hpp:
 
 /usr/local/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
 

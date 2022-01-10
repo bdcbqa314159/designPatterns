@@ -9,5 +9,7 @@
 #include "designPatterns_bits/dependencyInversion.hpp"
 #include "designPatterns_bits/builderPattern.hpp"
 #include "designPatterns_bits/groovyStyle.hpp"
+#include "designPatterns_bits/person.hpp"
+#include "designPatterns_bits/personBuilder.hpp"
 
 #endif
