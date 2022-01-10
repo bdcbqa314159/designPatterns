@@ -9,11 +9,3 @@ namespace builder
         return PersonBuilder{};
     }
 }
-
-// namespace builder1
-// {
-//     PersonBuilder Person::create()
-//     {
-//         return PersonBuilder{};
-//     }
-// }
