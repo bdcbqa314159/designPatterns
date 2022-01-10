@@ -663,12 +663,9 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/designPatterns_bits/dependencyInversion.hpp \
   /usr/local/include/designPatterns_bits/builderPattern.hpp \
   /usr/local/include/designPatterns_bits/groovyStyle.hpp \
-  /usr/local/include/designPatterns_bits/facets.hpp \
   /usr/local/include/designPatterns_bits/person.hpp \
   /usr/local/include/designPatterns_bits/personBuilder.hpp
 
-
-/usr/local/include/designPatterns_bits/facets.hpp:
 
 /usr/local/include/designPatterns_bits/groovyStyle.hpp:
 
