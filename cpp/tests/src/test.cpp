@@ -1,3 +1,4 @@
+#define _USE_MATH_DEFINES
 #include <designPatterns>
 #include <iostream>
 
@@ -162,6 +163,18 @@ void facetsTester()
     cout << p << endl;
 }
 
+void factoryMethodTester()
+{
+    Point1 p1{1, 2};
+
+    auto p = Point2::newPolar(5, M_PI_4);
+    cout << p << endl;
+
+    cout << "p :" << endl;
+    cout << p1 << endl;
+    ;
+}
+
 int main()
 {
 
@@ -171,9 +184,10 @@ int main()
     // lyskovTester();
     // interfaceAggregationTester();
     // dependencyInversionTester();
-    builderPatternTester();
-    groovyStyleTester();
-    facetsTester();
+    // builderPatternTester();
+    // groovyStyleTester();
+    // facetsTester();
+    factoryMethodTester();
 
     return 0;
 }

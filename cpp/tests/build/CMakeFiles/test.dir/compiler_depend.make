@@ -664,8 +664,11 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/designPatterns_bits/builderPattern.hpp \
   /usr/local/include/designPatterns_bits/groovyStyle.hpp \
   /usr/local/include/designPatterns_bits/person.hpp \
-  /usr/local/include/designPatterns_bits/personBuilder.hpp
+  /usr/local/include/designPatterns_bits/personBuilder.hpp \
+  /usr/local/include/designPatterns_bits/factoryMethod.hpp
 
+
+/usr/local/include/designPatterns_bits/factoryMethod.hpp:
 
 /usr/local/include/designPatterns_bits/groovyStyle.hpp:
 

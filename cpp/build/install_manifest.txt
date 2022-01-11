@@ -2,6 +2,7 @@
 /usr/local/include/designPatterns
 /usr/local/include/designPatterns_bits/dependencyInversion.hpp
 /usr/local/include/designPatterns_bits/.DS_Store
+/usr/local/include/designPatterns_bits/factoryMethod.hpp
 /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp
 /usr/local/include/designPatterns_bits/personBuilder.hpp
 /usr/local/include/designPatterns_bits/groovyStyle.hpp

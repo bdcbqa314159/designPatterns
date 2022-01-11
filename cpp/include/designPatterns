@@ -11,5 +11,6 @@
 #include "designPatterns_bits/groovyStyle.hpp"
 #include "designPatterns_bits/person.hpp"
 #include "designPatterns_bits/personBuilder.hpp"
+#include "designPatterns_bits/factoryMethod.hpp"
 
 #endif
