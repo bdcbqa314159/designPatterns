@@ -10,12 +10,12 @@ class Printable
 {
 protected:
     float x, y;
+    Printable(float x, float y) : x(x), y(y) {}
 
     friend ostream &operator<<(ostream &os, const Printable &p)
     {
         os << "x : " << p.x << endl;
         os << "y : " << p.y << endl;
-
         return os;
     }
 };
@@ -28,34 +28,30 @@ enum class PointType
 
 class Point1 : public Printable
 {
-
 public:
-    Point1(float a, float b, PointType type = PointType::cartesian)
+    Point1(float x, float y, PointType type = PointType::cartesian) : Printable(x, y)
     {
         if (type == PointType::cartesian)
         {
-            x = a;
-            y = b;
+            this->x = x;
+            this->y = y;
         }
-
         else
         {
-            x = a * cos(b);
-            y = a * cos(b);
+            this->x = x * cos(y);
+            this->y = x * sin(y);
         }
     }
 };
 
 class Point2 : public Printable
 {
-    float x, y;
-
-    Point2(float x, float y) : x(x), y(y)
+    Point2(float x, float y) : Printable(x, y)
     {
     }
 
 public:
-    static Point2 newCartesian(float x, float y)
+    static Point2 newCatesian(float x, float y)
     {
         return Point2{x, y};
     }
