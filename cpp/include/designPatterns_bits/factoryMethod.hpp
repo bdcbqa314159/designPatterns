@@ -6,69 +6,63 @@
 
 using namespace std;
 
+class Printable
+{
+protected:
+    float x, y;
+
+    friend ostream &operator<<(ostream &os, const Printable &p)
+    {
+        os << "x : " << p.x << endl;
+        os << "y : " << p.y << endl;
+
+        return os;
+    }
+};
+
 enum class PointType
 {
     cartesian,
     polar
 };
 
-class Point1
+class Point1 : public Printable
 {
 
 public:
-    float x, y;
     Point1(float a, float b, PointType type = PointType::cartesian)
     {
-
         if (type == PointType::cartesian)
         {
             x = a;
             y = b;
         }
+
         else
         {
             x = a * cos(b);
-            y = a * sin(b);
+            y = a * cos(b);
         }
-    }
-
-    friend ostream &operator<<(ostream &os, const Point1 &obj)
-    {
-
-        os << "x: " << obj.x << endl;
-        os << "y: " << obj.y << endl;
-
-        return os;
     }
 };
 
-class Point2
+class Point2 : public Printable
 {
-
     float x, y;
 
-    Point2(const float x, const float y) : x(x), y(y)
+    Point2(float x, float y) : x(x), y(y)
     {
     }
 
 public:
-    friend ostream &operator<<(ostream &os, const Point2 &obj)
-    {
-
-        os << "x: " << obj.x << endl;
-        os << "y: " << obj.y << endl;
-
-        return os;
-    }
-
     static Point2 newCartesian(float x, float y)
     {
         return Point2{x, y};
     }
 
-    static Point2 newPolar(float r, float theta)
+    static Point2 newPolar(float x, float y)
     {
-        return Point2{r * cos(theta), r * sin(theta)};
+        return Point2{x * cos(y), x * sin(y)};
     }
 };
 
