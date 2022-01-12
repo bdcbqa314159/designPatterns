@@ -662,4 +662,12 @@ CMakeFiles/test.dir/src/test.cpp.o: \
   /usr/local/include/designPatterns_bits/groovyStyle.hpp \
   /usr/local/include/designPatterns_bits/person.hpp \
   /usr/local/include/designPatterns_bits/personBuilder.hpp \
-  /usr/local/include/designPatterns_bits/factoryMethod.hpp
+  /usr/local/include/designPatterns_bits/factoryMethod.hpp \
+  /usr/local/include/designPatterns_bits/hotDrink.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__node_handle \
+  /usr/local/include/designPatterns_bits/hotDrinkFactory.hpp \
+  /usr/local/include/designPatterns_bits/teaFactory.hpp \
+  /usr/local/include/designPatterns_bits/coffeeFactory.hpp \
+  /usr/local/include/designPatterns_bits/drinkFactory.hpp

@@ -30,6 +30,11 @@ set(SOURCE_FILES
     ${PROJECT_INCLUDE_DIR}/person.hpp
     ${PROJECT_INCLUDE_DIR}/personBuilder.hpp
     ${PROJECT_INCLUDE_DIR}/factoryMethod.hpp
+    ${PROJECT_INCLUDE_DIR}/hotDrink.hpp
+    ${PROJECT_INCLUDE_DIR}/hotDrinkFactory.hpp
+    ${PROJECT_INCLUDE_DIR}/teaFactory.hpp
+    ${PROJECT_INCLUDE_DIR}/coffeeFactory.hpp
+    ${PROJECT_INCLUDE_DIR}/drinkFactory.hpp
   
     ${PROJECT_SOURCE_DIR}/test.cpp
     ${PROJECT_SOURCE_DIR}/person.cpp

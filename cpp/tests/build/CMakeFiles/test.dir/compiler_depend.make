@@ -665,8 +665,20 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
   /usr/local/include/designPatterns_bits/groovyStyle.hpp \
   /usr/local/include/designPatterns_bits/person.hpp \
   /usr/local/include/designPatterns_bits/personBuilder.hpp \
-  /usr/local/include/designPatterns_bits/factoryMethod.hpp
+  /usr/local/include/designPatterns_bits/factoryMethod.hpp \
+  /usr/local/include/designPatterns_bits/hotDrink.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__node_handle \
+  /usr/local/include/designPatterns_bits/hotDrinkFactory.hpp \
+  /usr/local/include/designPatterns_bits/teaFactory.hpp \
+  /usr/local/include/designPatterns_bits/coffeeFactory.hpp \
+  /usr/local/include/designPatterns_bits/drinkFactory.hpp
 
+
+/usr/local/include/designPatterns_bits/drinkFactory.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__tree:
 
 /usr/local/include/designPatterns_bits/factoryMethod.hpp:
 
@@ -938,6 +950,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 
 /usr/local/include/boost/core/addressof.hpp:
 
+/usr/local/include/designPatterns_bits/teaFactory.hpp:
+
 /usr/local/include/boost/mpl/integral_c_fwd.hpp:
 
 /usr/local/include/boost/iterator/detail/enable_if.hpp:
@@ -977,6 +991,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /usr/local/include/boost/mpl/aux_/config/integral.hpp:
 
 /usr/local/include/boost/mpl/if.hpp:
+
+/usr/local/include/designPatterns_bits/hotDrink.hpp:
 
 /usr/local/include/boost/mpl/eval_if.hpp:
 
@@ -1140,6 +1156,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 
 /usr/local/include/boost/preprocessor/detail/is_binary.hpp:
 
+/usr/local/include/designPatterns_bits/coffeeFactory.hpp:
+
 /usr/local/include/boost/preprocessor/list/detail/fold_left.hpp:
 
 /usr/local/include/boost/mpl/aux_/config/nttp.hpp:
@@ -1190,6 +1208,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 
 /usr/local/include/boost/iterator/iterator_facade.hpp:
 
+/usr/local/include/designPatterns_bits/hotDrinkFactory.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/unistd.h:
 
 /usr/local/include/boost/iterator/iterator_traits.hpp:
@@ -1197,6 +1217,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/sys/select.h:
 
 /usr/local/include/boost/mpl/aux_/config/ctps.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__node_handle:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/machine/types.h:
 
@@ -1625,6 +1647,8 @@ CMakeFiles/test.dir/src/test.cpp.o: ../src/test.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/limits.h:
 
 /usr/local/include/boost/preprocessor/stringize.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/map:
 
 /usr/local/include/boost/range/algorithm/equal.hpp:
 

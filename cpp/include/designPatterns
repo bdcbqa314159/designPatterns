@@ -12,5 +12,10 @@
 #include "designPatterns_bits/person.hpp"
 #include "designPatterns_bits/personBuilder.hpp"
 #include "designPatterns_bits/factoryMethod.hpp"
+#include "designPatterns_bits/hotDrink.hpp"
+#include "designPatterns_bits/hotDrinkFactory.hpp"
+#include "designPatterns_bits/teaFactory.hpp"
+#include "designPatterns_bits/coffeeFactory.hpp"
+#include "designPatterns_bits/drinkFactory.hpp"
 
 #endif

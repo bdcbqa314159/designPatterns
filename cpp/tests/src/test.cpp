@@ -184,6 +184,16 @@ void factoryMethodTester()
     cout << p4 << endl;
 }
 
+void abstractFactoryTester()
+{
+    auto d = make_drink("tea");
+    DrinkFactory df;
+    df.make_drink("coffee");
+
+    DrinkWithVolumeFactory dwvf;
+    dwvf.make_drink("tea");
+}
+
 int main()
 {
 
@@ -197,6 +207,7 @@ int main()
     // groovyStyleTester();
     // facetsTester();
     factoryMethodTester();
+    abstractFactoryTester();
 
     return 0;
 }

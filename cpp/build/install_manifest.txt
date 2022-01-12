@@ -1,6 +1,10 @@
 /usr/local/lib/libdesignPatterns.dylib
 /usr/local/include/designPatterns
 /usr/local/include/designPatterns_bits/dependencyInversion.hpp
+/usr/local/include/designPatterns_bits/hotDrink.hpp
+/usr/local/include/designPatterns_bits/coffeeFactory.hpp
+/usr/local/include/designPatterns_bits/hotDrinkFactory.hpp
+/usr/local/include/designPatterns_bits/teaFactory.hpp
 /usr/local/include/designPatterns_bits/.DS_Store
 /usr/local/include/designPatterns_bits/factoryMethod.hpp
 /usr/local/include/designPatterns_bits/lyskovSubstitution.hpp
@@ -11,4 +15,5 @@
 /usr/local/include/designPatterns_bits/test.hpp
 /usr/local/include/designPatterns_bits/interfaceAggregation.hpp
 /usr/local/include/designPatterns_bits/builderPattern.hpp
+/usr/local/include/designPatterns_bits/drinkFactory.hpp
 /usr/local/include/designPatterns_bits/singleResponsability.hpp
