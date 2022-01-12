@@ -166,13 +166,22 @@ void facetsTester()
 void factoryMethodTester()
 {
     Point1 p1{1, 2};
-
-    auto p = Point2::newPolar(5, M_PI_4);
-    cout << p << endl;
-
-    cout << "p :" << endl;
+    cout << "p1 :" << endl;
     cout << p1 << endl;
+
+    auto p2 = Point2::newPolar(5, M_PI_4);
+
+    cout << "p2 :" << endl;
+    cout << p2 << endl;
     ;
+
+    auto p3 = PointFactory::newPolar(5, M_PI_4);
+    cout << "p3 :" << endl;
+    cout << p3 << endl;
+
+    auto p4 = Point4::Factory.newPolar(5, M_PI_4);
+    cout << "p4 :" << endl;
+    cout << p4 << endl;
 }
 
 int main()
