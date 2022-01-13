@@ -12,13 +12,13 @@ struct HotDrink
 {
 
     virtual ~HotDrink() = default;
-    virtual void prepare(int volume) = 0;
+    virtual void prepare(int volume) const = 0;
 };
 
 struct Tea : HotDrink
 {
 
-    void prepare(int volume) override
+    void prepare(int volume) const override
     {
         cout << "Here you have " << volume << "ml of tea." << endl;
     }
@@ -27,9 +27,9 @@ struct Tea : HotDrink
 struct Coffee : HotDrink
 {
 
-    void prepare(int volume) override
+    void prepare(int volume) const override
     {
-        cout << "Here you have " << volume << "ml of coffee." << endl;
+        cout << "Here you have " << volume << "ml if coffee" << endl;
     }
 };
 

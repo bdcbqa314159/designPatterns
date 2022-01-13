@@ -192,6 +192,7 @@ void abstractFactoryTester()
 
     DrinkWithVolumeFactory dwvf;
     dwvf.make_drink("tea");
+    dwvf.make_drink("coffee");
 }
 
 int main()
