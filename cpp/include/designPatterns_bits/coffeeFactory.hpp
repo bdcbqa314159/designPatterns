@@ -3,9 +3,18 @@
 
 #include "hotDrinkFactory.hpp"
 
+// struct CoffeeFactory : HotDrinkFactory
+// {
+//     unique_ptr<HotDrink> make() const override
+//     {
+//         return make_unique<Coffee>();
+//     }
+// };
+
 struct CoffeeFactory : HotDrinkFactory
 {
-    unique_ptr<HotDrink> make() const override
+
+    unique_ptr<HotDrink> make() const
     {
         return make_unique<Coffee>();
     }
