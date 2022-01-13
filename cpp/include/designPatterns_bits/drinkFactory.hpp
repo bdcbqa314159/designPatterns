@@ -6,26 +6,24 @@
 #include "hotDrinkFactory.hpp"
 
 struct HotDrinkFactory;
+
 class DrinkFactory
 {
-    map<string, unique_ptr<HotDrinkFactory>> hot_factories;
+
+    map<string, unique_ptr<HotDrinkFactory>> hot_drink_factories;
 
 public:
     DrinkFactory()
     {
-        hot_factories["coffee"] = make_unique<CoffeeFactory>();
-        hot_factories["tea"] = make_unique<TeaFactory>();
+        hot_drink_factories["coffee"] = make_unique<CoffeeFactory>();
+        hot_drink_factories["tea"] = make_unique<TeaFactory>();
     }
 
     unique_ptr<HotDrink> make_drink(const string &name)
     {
-        auto drink = hot_factories[name]->make();
+        auto drink = hot_drink_factories[name]->make();
         drink->prepare(200);
         return drink;
-    }
-
-    ~DrinkFactory()
-    {
     }
 };
 
@@ -38,6 +36,7 @@ public:
     DrinkWithVolumeFactory()
     {
         factories["tea"] = []
+
         {
             auto tea = make_unique<Tea>();
             tea->prepare(200);

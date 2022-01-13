@@ -20,7 +20,7 @@ struct Tea : HotDrink
 
     void prepare(int volume) override
     {
-        cout << "Take tea bag, boil water, pour " << volume << "ml, add some lemon & enjoy!" << endl;
+        cout << "Preparing " << volume << "ml of tea. :)" << endl;
     }
 };
 
@@ -29,12 +29,13 @@ struct Coffee : HotDrink
 
     void prepare(int volume) override
     {
-        cout << "Grind some beans, boil water, pour " << volume << "ml, add cream & enjoy!" << endl;
-    }
+        cout << "Preparing " << volume << "ml of coffee. :)" << endl;
+    };
 };
 
 unique_ptr<HotDrink> make_drink(const string &name)
 {
+
     unique_ptr<HotDrink> drink;
 
     if (name == "tea")

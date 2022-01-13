@@ -203,9 +203,11 @@ int main()
     // lyskovTester();
     // interfaceAggregationTester();
     // dependencyInversionTester();
+
     // builderPatternTester();
-    // groovyStyleTester();
-    // facetsTester();
+    //  groovyStyleTester();
+    //  facetsTester();
+
     factoryMethodTester();
     abstractFactoryTester();
 
