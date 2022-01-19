@@ -221,24 +221,13 @@ void prototypeTester()
     cout << *john1 << endl;
     cout << *jane1 << endl;
 
-    auto clone = [](const Contact &c)
-    {
-        ostringstream oss;
-        archive::text_oarchive oa(oss);
-        oa << c;
-        string s = oss.str();
-        cout << s << endl;
-
-        istringstream iss(s);
-        archive::text_iarchive ia(iss);
-        Contact result;
-        ia >> result;
-        return result;
-    };
-
     auto john2 = EmployeeFactory::newMainOfficeEmployee("John", 123);
 
-    auto jane2 = clone(*john2);
+    auto jane2 = inOutSerialize(*john2);
+    jane2.name = "Jane Mane";
+    jane2.address->suite = 1233;
+    cout << *john2 << endl;
+    cout << jane2 << endl;
 }
 
 int main()

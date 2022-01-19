@@ -120,6 +120,21 @@ private:
     }
 };
 
+Contact inOutSerialize(const Contact &c)
+{
+    ostringstream oss;
+    archive::text_oarchive oa(oss);
+    oa << c;
+    string s = oss.str();
+    cout << s << endl;
+
+    istringstream iss(s);
+    archive::text_iarchive ia(iss);
+    Contact result;
+    ia >> result;
+    return result;
+};
+
 #endif
 
 // Several steps

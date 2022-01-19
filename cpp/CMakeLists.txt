@@ -44,7 +44,7 @@ set(SOURCE_FILES
 )
 
 # Set up such that XCode organizes the files correctly
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES} )
 
 # Add library
 add_library(designPatterns SHARED ${SOURCE_FILES})

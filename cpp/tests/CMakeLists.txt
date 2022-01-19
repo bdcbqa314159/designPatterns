@@ -25,7 +25,7 @@ find_library(DESIGNPATTERNS_LIB designPatterns HINTS /usr/local/lib/)
 
 add_executable(test src/test.cpp)
 
-target_link_libraries(test PUBLIC ${DESIGNPATTERNS_LIB} boost::serialization)
+target_link_libraries(test PUBLIC ${DESIGNPATTERNS_LIB} boost::serialization) 
 
   
 
