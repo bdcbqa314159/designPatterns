@@ -1,5 +1,6 @@
 /usr/local/lib/libdesignPatterns.dylib
 /usr/local/include/designPatterns
+/usr/local/include/designPatterns_bits/prototype.hpp
 /usr/local/include/designPatterns_bits/dependencyInversion.hpp
 /usr/local/include/designPatterns_bits/hotDrink.hpp
 /usr/local/include/designPatterns_bits/coffeeFactory.hpp

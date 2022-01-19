@@ -17,5 +17,6 @@
 #include "designPatterns_bits/teaFactory.hpp"
 #include "designPatterns_bits/coffeeFactory.hpp"
 #include "designPatterns_bits/drinkFactory.hpp"
+#include "designPatterns_bits/prototype.hpp"
 
 #endif

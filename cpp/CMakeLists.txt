@@ -35,6 +35,7 @@ set(SOURCE_FILES
     ${PROJECT_INCLUDE_DIR}/teaFactory.hpp
     ${PROJECT_INCLUDE_DIR}/coffeeFactory.hpp
     ${PROJECT_INCLUDE_DIR}/drinkFactory.hpp
+    ${PROJECT_INCLUDE_DIR}/prototype.hpp
   
     ${PROJECT_SOURCE_DIR}/test.cpp
     ${PROJECT_SOURCE_DIR}/person.cpp
@@ -49,7 +50,7 @@ source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES})
 add_library(designPatterns SHARED ${SOURCE_FILES})
 
 # Include directories
-target_include_directories(designPatterns PRIVATE include/designPatterns_bits)
+target_include_directories(designPatterns PRIVATE include/designPatterns_bits )
 
 # Install
 install(TARGETS designPatterns DESTINATION lib)

@@ -1,6 +1,13 @@
 #define _USE_MATH_DEFINES
 #include <designPatterns>
 #include <iostream>
+#include <sstream>
+#include <boost/serialization/serialization.hpp>
+#include <boost/archive/text_iarchive.hpp>
+#include <boost/archive/text_oarchive.hpp>
+
+using namespace std;
+using namespace boost;
 
 void singleResponsabilityTester()
 {
@@ -195,6 +202,45 @@ void abstractFactoryTester()
     dwvf.make_drink("coffee");
 }
 
+void prototypeTester()
+{
+    cout << "Simple implementation of the Prototype Design Pattern." << endl;
+    Contact john{"John Doe", new Address{"123 East Dr", "London", 123}};
+
+    Contact jane{john};
+    jane.name = "Jane Smith";
+    jane.address->suite = 103;
+
+    cout << john << endl;
+    cout << jane << endl;
+
+    auto john1 = EmployeeFactory::newMainOfficeEmployee("John", 123);
+
+    auto jane1 = EmployeeFactory::newMainOfficeEmployee("Jane", 103);
+
+    cout << *john1 << endl;
+    cout << *jane1 << endl;
+
+    auto clone = [](const Contact &c)
+    {
+        ostringstream oss;
+        archive::text_oarchive oa(oss);
+        oa << c;
+        string s = oss.str();
+        cout << s << endl;
+
+        istringstream iss(s);
+        archive::text_iarchive ia(iss);
+        Contact result;
+        ia >> result;
+        return result;
+    };
+
+    auto john2 = EmployeeFactory::newMainOfficeEmployee("John", 123);
+
+    auto jane2 = clone(*john2);
+}
+
 int main()
 {
 
@@ -209,8 +255,10 @@ int main()
     //  groovyStyleTester();
     //  facetsTester();
 
-    factoryMethodTester();
-    abstractFactoryTester();
+    // factoryMethodTester();
+    // abstractFactoryTester();
+
+    prototypeTester();
 
     return 0;
 }
