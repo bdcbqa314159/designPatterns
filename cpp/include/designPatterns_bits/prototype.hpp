@@ -13,14 +13,51 @@
 using namespace std;
 using namespace boost;
 
+// struct Address
+// {
+
+//     string street;
+//     string city;
+//     int suite;
+
+//     Address()
+//     {
+//     }
+
+//     Address(const string &street, const string &city, const int suite) : street{street}, city{city}, suite{suite}
+//     {
+//     }
+
+//     Address(const Address &address) : street{address.street}, city{address.city}, suite{address.suite}
+//     {
+//     }
+
+//     friend ostream &operator<<(ostream &os, const Address &obj)
+//     {
+//         return os << "street : " << obj.street << " city : " << obj.city << " suite : " << obj.suite;
+//     }
+
+// private:
+//     friend class serialization::access;
+//     template <class Archive>
+//     void serialize(Archive &ar, const unsigned version)
+//     {
+//         ar &street;
+//         ar &city;
+//         ar &suite;
+//     }
+// };
+
 struct Address
 {
-
-    string street;
-    string city;
+    string street, city;
     int suite;
 
     Address()
+    {
+    }
+
+    Address(const Address &other) : street{other.street}, city{other.city}, suite{other.suite}
     {
     }
 
@@ -28,13 +65,11 @@ struct Address
     {
     }
 
-    Address(const Address &address) : street{address.street}, city{address.city}, suite{address.suite}
-    {
-    }
-
     friend ostream &operator<<(ostream &os, const Address &obj)
     {
-        return os << "street : " << obj.street << " city : " << obj.city << " suite : " << obj.suite;
+        os << "street: " << obj.street << " in city: " << obj.city << " with suite: " << obj.suite << endl;
+
+        return os;
     }
 
 private:
@@ -48,20 +83,72 @@ private:
     }
 };
 
+// struct Contact
+// {
+//     string name;
+//     Address *address;
+
+//     Contact &operator=(const Contact &other)
+//     {
+//         if (this == &other)
+//         {
+//             return *this;
+//         }
+
+//         name = other.name;
+//         address = other.address;
+//         return *this;
+//     }
+
+//     Contact()
+//     {
+//     }
+
+//     Contact(string name, Address *address) : name{name}, address{address}
+//     {
+//         this->address = new Address{*address};
+//     }
+
+//     Contact(const Contact &other) : name{other.name}, address{new Address{*other.address}}
+//     {
+//     }
+
+//     ~Contact()
+//     {
+//         delete address;
+//     }
+
+//     friend ostream &operator<<(ostream &os, const Contact &obj)
+//     {
+//         os << "name: " << obj.name << " works at : " << *obj.address;
+
+//         return os;
+//     }
+
+// private:
+//     friend class serialization::access;
+//     template <class Archive>
+//     void serialize(Archive &ar, const unsigned version)
+//     {
+//         ar &name;
+//         ar &address;
+//     }
+// };
+
 struct Contact
 {
+
     string name;
     Address *address;
 
     Contact &operator=(const Contact &other)
     {
         if (this == &other)
-        {
             return *this;
-        }
 
         name = other.name;
         address = other.address;
+
         return *this;
     }
 
@@ -69,31 +156,32 @@ struct Contact
     {
     }
 
-    Contact(string name, Address *address) : name{name}, address{address}
+    Contact(const string &name, const Address *address) : name{name}
     {
+
         this->address = new Address{*address};
     }
 
-    Contact(const Contact &other) : name{other.name}, address{new Address{*other.address}}
+    Contact(const Contact &other) : name(other.name), address{new Address{*other.address}}
     {
     }
 
     ~Contact()
     {
+
         delete address;
     }
 
     friend ostream &operator<<(ostream &os, const Contact &obj)
     {
-        os << "name: " << obj.name << " works at : " << *obj.address;
-
+        os << "name: " << obj.name << " lives at: " << *obj.address << endl;
         return os;
     }
 
 private:
     friend class serialization::access;
     template <class Archive>
-    void serialize(Archive &ar, const unsigned version)
+    void serialize(Archive &ar, const unsigned versio)
     {
         ar &name;
         ar &address;
@@ -122,9 +210,11 @@ private:
 
 Contact inOutSerialize(const Contact &c)
 {
+
     ostringstream oss;
     archive::text_oarchive oa(oss);
     oa << c;
+
     string s = oss.str();
     cout << s << endl;
 
@@ -133,7 +223,7 @@ Contact inOutSerialize(const Contact &c)
     Contact result;
     ia >> result;
     return result;
-};
+}
 
 #endif
 
