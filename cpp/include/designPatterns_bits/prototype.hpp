@@ -15,6 +15,7 @@ using namespace boost;
 
 struct Address
 {
+
     string street, city;
     int suite;
 
@@ -22,23 +23,23 @@ struct Address
     {
     }
 
-    Address(const string &street, const string &city, const int &suite) : street(street), city(city), suite(suite)
+    Address(const Address &other) : street(other.street), city(other.city), suite(other.suite)
     {
     }
 
-    Address(const Address &other) : street(other.street), city(other.city), suite(other.suite)
+    Address(const string &street, const string &city, const int suite) : street(street), city(city), suite(suite)
     {
     }
 
     friend ostream &operator<<(ostream &os, const Address &obj)
     {
-        os << "street: " << obj.street << " in the city: " << obj.city << " suite: " << obj.suite << endl;
+        os << "street: " << obj.street << " city: " << obj.city << " suite: " << obj.suite << endl;
+
         return os;
     }
 
 private:
     friend class serialization::access;
-
     template <class Archive>
     void serialize(Archive &ar, const unsigned version)
     {
@@ -53,6 +54,14 @@ struct Contact
     string name;
     Address *address;
 
+    Contact()
+    {
+    }
+
+    Contact(const Contact &other) : name(other.name), address(new Address{*other.address})
+    {
+    }
+
     Contact &operator=(const Contact &other)
     {
         if (this == &other)
@@ -64,25 +73,18 @@ struct Contact
         return *this;
     }
 
-    Contact()
-    {
-    }
-
-    Contact(const string &name, const Address *address) : name{name}, address{new Address{*address}}
-    {
-    }
-
-    Contact(const Contact &other) : name(other.name), address{new Address{*other.address}}
+    Contact(const string &name, const Address *address) : name(name), address{new Address{*address}}
     {
     }
 
     ~Contact()
     {
+        delete address;
     }
 
     friend ostream &operator<<(ostream &os, const Contact &obj)
     {
-        os << "name : " << obj.name << " lives at : " << *obj.address << endl;
+        os << "name : " << obj.name << " lives at: " << *obj.address << endl;
         return os;
     }
 
@@ -101,8 +103,7 @@ struct EmployeeFactory
 {
     static unique_ptr<Contact> newMainOfficeEmployee(string name, int suite)
     {
-
-        static Contact main{"", new Address{"123 East Dr", "London", 0}};
+        static Contact main{"", new Address{"123 London East Dr", "London", 0}};
 
         return NewEmployee(name, suite, main);
     }
@@ -110,7 +111,6 @@ struct EmployeeFactory
 private:
     static unique_ptr<Contact> NewEmployee(string name, int suite, Contact &prototype)
     {
-
         auto result = make_unique<Contact>(prototype);
 
         result->name = name;
@@ -124,6 +124,7 @@ Contact inOutSerialize(const Contact &c)
 {
     ostringstream oss;
     archive::text_oarchive oa(oss);
+
     oa << c;
 
     string s = oss.str();
@@ -134,7 +135,6 @@ Contact inOutSerialize(const Contact &c)
 
     Contact result;
     ia >> result;
-
     return result;
 }
 
