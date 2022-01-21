@@ -34,12 +34,12 @@ struct Address
     friend ostream &operator<<(ostream &os, const Address &obj)
     {
         os << "street: " << obj.street << " city: " << obj.city << " suite: " << obj.suite << endl;
-
         return os;
     }
 
 private:
     friend class serialization::access;
+
     template <class Archive>
     void serialize(Archive &ar, const unsigned version)
     {
@@ -58,7 +58,7 @@ struct Contact
     {
     }
 
-    Contact(const Contact &other) : name(other.name), address(new Address{*other.address})
+    Contact(const Contact &other) : name(other.name), address{new Address{*other.address}}
     {
     }
 
@@ -84,7 +84,8 @@ struct Contact
 
     friend ostream &operator<<(ostream &os, const Contact &obj)
     {
-        os << "name : " << obj.name << " lives at: " << *obj.address << endl;
+        os << "name : " << obj.name << " lives at : " << *obj.address << endl;
+
         return os;
     }
 
@@ -103,7 +104,7 @@ struct EmployeeFactory
 {
     static unique_ptr<Contact> newMainOfficeEmployee(string name, int suite)
     {
-        static Contact main{"", new Address{"123 London East Dr", "London", 0}};
+        static Contact main{"", new Address{"", "123 East Dr", 0}};
 
         return NewEmployee(name, suite, main);
     }
@@ -111,6 +112,7 @@ struct EmployeeFactory
 private:
     static unique_ptr<Contact> NewEmployee(string name, int suite, Contact &prototype)
     {
+
         auto result = make_unique<Contact>(prototype);
 
         result->name = name;
@@ -122,17 +124,15 @@ private:
 
 Contact inOutSerialize(const Contact &c)
 {
+
     ostringstream oss;
     archive::text_oarchive oa(oss);
-
     oa << c;
-
     string s = oss.str();
     cout << s << endl;
 
     istringstream iss(s);
     archive::text_iarchive ia(iss);
-
     Contact result;
     ia >> result;
     return result;
